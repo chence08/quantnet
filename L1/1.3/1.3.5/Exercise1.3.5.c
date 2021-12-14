@@ -1,6 +1,9 @@
+/* Author: YiJia Chen
+Demonstration of prefix and postfix operator on integers. */
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int prefix = 0;
     int postfix = 0;
     int x = --prefix;
@@ -9,5 +12,5 @@ int main() {
     printf("PREFIX\n");
     printf("After executing x = --i, x = %d and i = %d.\n", x, prefix);
     printf("POSTIFIX\n");
-    printf("After executing y = i--, y = %d and i = %d.", y, postfix);
+    printf("After executing y = i--, y = %d and i = %d.\n", y, postfix);
 }

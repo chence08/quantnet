@@ -1,6 +1,10 @@
+/* Author: YiJia Chen 
+Demonstration of logical shift on unsigned integer, 
+arithmetic shift on signed integer.*/
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int a;
     unsigned b;
     printf("Enter any integer between -2147483648 and 2147483647: ");

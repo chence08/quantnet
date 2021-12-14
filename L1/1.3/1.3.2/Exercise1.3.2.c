@@ -1,7 +1,9 @@
+/* Author: YiJia Chen */
 #include <stdio.h>
 
 // Calculate the surface of a triangle.
-int main() {
+int main()
+{
     int base;
     int height;
 
@@ -11,6 +13,5 @@ int main() {
     printf("Enter height: ");
     scanf("%d", &height);
 
-    float result = base * height / 2.0;
-    printf("Result = %f", result);
+    printf("Result = %f\n", base * height / 2.0);
 }

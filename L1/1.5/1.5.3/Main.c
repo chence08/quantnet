@@ -1,8 +1,10 @@
+/* Author: YiJia Chen */
 #include <stdio.h>
 
 void print(int i);
 
-int main() {
+int main()
+{
     printf("Enter number: ");
     int i;
     scanf("%d", &i);

@@ -1,6 +1,9 @@
+/* Author: YiJia Chen */
 #include <stdio.h>
 
-long factorial(int a) {
+/* recursive factorial function */
+long factorial(int a)
+{
     if (a == 0)
         return 1;
     return a * factorial(a - 1);

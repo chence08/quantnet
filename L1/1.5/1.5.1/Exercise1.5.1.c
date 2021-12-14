@@ -1,10 +1,14 @@
+/* Author: YiJia Chen */
 #include <stdio.h>
 
-int minus(int a, int b) {
+/* return a - b */
+int minus(int a, int b)
+{
     return a - b;
 }
 
-int main() {
+int main()
+{
     int a, b;
     printf("Compute a - b.\nEnter a: ");
     scanf("%d", &a);
