@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int line[1000];
     int c, i, lineLength = 0;
     printf("Input text, hit ENTER to display text.\n");

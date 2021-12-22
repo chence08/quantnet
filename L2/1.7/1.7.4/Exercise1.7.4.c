@@ -13,11 +13,13 @@ char names[7][9] = {
     "Saturday"
 };
 
-void DayName(int day) {
+void DayName(int day)
+{
     printf("Day %d is a %s.\n", day, names[day-1]);
 }
 
-int main() {
+int main()
+{
     int day;
     printf("Enter day number: ");
     scanf("%d", &day);

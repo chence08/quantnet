@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int main() {
+int main()
+{
     FILE *fp = fopen("output", "w");
 
     int line[1000];
