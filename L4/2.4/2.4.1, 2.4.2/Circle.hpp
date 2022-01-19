@@ -19,9 +19,15 @@ public:
 
     string ToString() const;
 
+    /* Exercise 2.4.1 */
+    Circle& operator=(const Circle& source);
+
 private:
     Point centre;
     double m_radius;
 };
+
+/* Exercise 2.4.2 ostream << operator */
+ostream& operator<<(ostream& os, const Circle& c);
 
 #endif

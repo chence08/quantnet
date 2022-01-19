@@ -53,6 +53,26 @@ Enter three numbers: 10.5 #ENTER
 The average of 10.5 11 11.5 is 11
 ```
 
+# 3 Selections
+
+
+
+## 3.15 Operator Precedence and Associativity
+
+| Operator                                                     |
+| ------------------------------------------------------------ |
+| `var++` and `var--` (Postfix)                                |
+| `+`, `-` (Unary plus and minus), `++var` and `--var` (Prefix) |
+| `static_cast`\<type\>(v), (type) (Casting)                   |
+| `!`                                                          |
+| `*, /, %`                                                    |
+| `+, -` (Binary addition and subtraction)                     |
+| `<, <=, >, >=`                                               |
+| `==, !=`                                                     |
+| `&&`                                                         |
+| `||`                                                         |
+| `=, +=, -=, *=, /=, %=`                                      |
+
 # 4 Mathematical Functions, Characters, and Strings
 
 ## 4.2 Mathematical Functions
@@ -524,5 +544,97 @@ Course::Course(const Course& course) // Copy constructor
 }
 ```
 
+## 11.9 Dynamic Persistent Memory Allocation
+
+## 11.10 Creating and Accessing Dynamic Objects
+
+# 12 Templates, Vectors, and Stacks
+
+## 12.2 Templates Basics
+
+```cpp
+template<typename T>
+T maxValue(T value1, T value2)
+{
+    if (value1 > value2)
+        return value1;
+    else
+        return value2;
+}
+```
+
+
+
 # 14 Operator Overloading
 
+## 14.3 Operator Functions
+
+```cpp
+bool Rational::operator<(const Rational& secondRational) const
+{
+    if (compareTo(secondRational) < 0)
+        return true;
+    else
+        return false;
+}
+```
+
+```cpp
+Rational r1(4, 2);
+Rational r2(2, 3);
+cout << "r1 < r2 is " << (r1.operator<(r2) ? "true" : "false");
+cout << "\nr1 < r2" << ((r1 < r2) ? "true" : "false");
+```
+
+yields
+
+```
+r1 < r2 is false
+r1 < r2 is false
+```
+
+### Operators that can be overloaded.
+
+|      |      |       |
+| ---- | ---- | ----- |
+| `+`  | `+=` | `++`  |
+| `-`  | `-=` | `--`  |
+| `*`  | `*=` | `->*` |
+| `/`  | `/=` | `,`   |
+| `%`  | `%=` | `->`  |
+| `^`  | `^=` | `[]`  |
+| `&`  | `&=` | `&&`  |
+| `|`  | `|=` | `||`  |
+| `~`  |      | `()`  |
+| `!`  | `!=` | `<<=` |
+| `=`  | `==` | `>>=` |
+| `<`  | `<=` | `<<`  |
+| `>`  | `>=` | `>>`  |
+
+- `new`
+- `delete`
+
+**Operators that cannot be overloaded.**
+
+- `?:`
+- `.`
+- `.*`
+- `::`
+
+> You cannot change operator [precdence and associativity](#3.15-operator-precedence-and-associativity) by overloading.
+>
+> You cannot change the number of operands by overloading.
+
+## 14.8 `friend` Functions and `friend` Classes
+
+> Used to enable access private members in **another class**.
+
+# 15 Inheritance and Polymorphism
+
+## 15.7 Virtual Functions and Dynamic Binding
+
+> A function can be implemented in several classes along the inheritance chain. Virtual functions enable the system to decide which function is invoked at runtime based on the actual type of the object.
+
+## 15.8 The `protected` Keyword
+
+## 15.9 Abstract Classes and Pure Virtual Functions
