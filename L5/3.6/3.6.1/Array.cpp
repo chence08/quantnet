@@ -44,13 +44,14 @@ void Array::SetElement(int index, const Point& p)
 {
     if (index >= 0 && index < m_size)
         m_data[index] = p;
+    throw -1;
 }
 
 Point& Array::GetElement(int index) const
 {
     if (index >= 0 && index < m_size)
         return m_data[index];
-    return m_data[0];
+    throw -1;
 }
 
 Point& Array::operator[](int index)
