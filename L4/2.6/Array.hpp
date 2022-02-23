@@ -23,12 +23,12 @@ namespace YiJia
             
             int Size() const;
             void SetElement(int index, const CAD::Point& p);
-            CAD::Point& GetElement(int index) const;
+            const CAD::Point& GetElement(int index) const;
             /* return element by reference since the returned element has a
             longer lifetime than the GetElement() function. */
             
             // Point& operator[](int index);
-            const CAD::Point& operator[](int index);
+            const CAD::Point& operator[](int index) const;
         };
 
         inline int Array::Size() const

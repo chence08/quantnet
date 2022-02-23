@@ -19,7 +19,7 @@ public:
     
     int Size() const;
     void SetElement(int index, const Point& p);
-    Point& GetElement(int index) const;
+    const Point& GetElement(int index) const;
     /* return element by reference since the returned element has a
     longer lifetime than the GetElement() function. */
     

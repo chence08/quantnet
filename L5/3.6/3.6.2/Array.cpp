@@ -57,7 +57,9 @@ Point& Array::GetElement(int index) const
 
 Point& Array::operator[](int index)
 {
-    return GetElement(index);
+    if (index >= 0 && index < m_size)
+        return m_data[index];
+    throw OutOfBoundsException(index);
 }
 
 const Point& Array::operator[](int index) const

@@ -50,7 +50,7 @@ namespace YiJia
                 m_data[index] = p;
         }
 
-        CAD::Point& Array::GetElement(int index) const
+        const CAD::Point& Array::GetElement(int index) const
         {
             if (index >= 0 && index < m_size)
                 return m_data[index];
@@ -62,7 +62,7 @@ namespace YiJia
         //     return GetElement(index);
         // }
 
-        const CAD::Point& Array::operator[](int index)
+        const CAD::Point& Array::operator[](int index) const
         {
             return GetElement(index);
         }

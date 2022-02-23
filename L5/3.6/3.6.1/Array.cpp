@@ -47,7 +47,7 @@ void Array::SetElement(int index, const Point& p)
     throw -1;
 }
 
-Point& Array::GetElement(int index) const
+const Point& Array::GetElement(int index) const
 {
     if (index >= 0 && index < m_size)
         return m_data[index];
@@ -56,7 +56,9 @@ Point& Array::GetElement(int index) const
 
 Point& Array::operator[](int index)
 {
-    return GetElement(index);
+    if (index >= 0 && index < m_size)
+        return m_data[index];
+    throw -1;
 }
 
 const Point& Array::operator[](int index) const
