@@ -1,3 +1,5 @@
+# Daniel Liang
+
 ```cpp
 #include <iostream>
 using namespace std;
@@ -638,3 +640,21 @@ r1 < r2 is false
 ## 15.8 The `protected` Keyword
 
 ## 15.9 Abstract Classes and Pure Virtual Functions
+
+------
+
+# C++ Primer
+
+# 2 Variables and Basic Types
+
+## 2.3 Compound Types
+
+A compound type is a type that is defined in terms of another type.
+
+### 2.3.1 References
+
+# 13 Copy Control
+
+## 13.6 Moving Objects
+
+### 13.6.1 Rvalue References

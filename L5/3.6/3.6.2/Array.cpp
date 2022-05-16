@@ -48,7 +48,7 @@ void Array::SetElement(int index, const Point& p)
     throw OutOfBoundsException(index);
 }
 
-Point& Array::GetElement(int index) const
+const Point& Array::GetElement(int index) const
 {
     if (index >= 0 && index < m_size)
         return m_data[index];
