@@ -937,6 +937,73 @@ p = (String) malloc(100);
 
 ## Unions
 
+A union is a variable that may hold (at different times) objects of different types and sizes, with the compiler keeping track of size and alignment requirements. Unions provide a way to **manipulate different kinds of data in a single area of storage, without embedding any machine-dependent information in the program.** They are analogous to variant records in pascal.
+
+Suppose that a constant may be an `int`, a `float` or a character pointer. Union is a single variable that can legitimately hold any one of these types.
+
+```c
+union u_tag {
+    int ival;
+    float fval;
+    char *sval;
+} u;
+```
+
+The variable `u` will be large enough to hold the largest of the three types; the specific size is implementation-dependent.
+
+Syntactically, members of a union are accessed as
+
+```
+union-name.member
+```
+
+or
+
+```
+union-pointer->member
+```
+
+just as for structures. If the `utype` is used to keep track of the current type stored in `u`, then one might see code such as
+
+```c
+if (utype == INT)
+    printf("%d\n", u.ival);
+if (utype == FLOAT)
+    printf("%f\n", u.fval);
+if (utype == STRING)
+    printf("%s\n", u.sval);
+else
+    printf("bad type %d in utype\n", utype);
+```
+
+Unions may occur within structures and arrays, and vice versa.
+
+```c
+struct {
+    char *name;
+    int flags;
+    int utype;
+    union {
+        int ival;
+        float fval;
+        char *sval;
+    } u;
+} symtab[NSYM];
+```
+
+the member `ival` is referred to as
+
+```c
+symtab[i].u.ival
+```
+
+and the first character of the string `sval` by either of
+
+```c
+*symtab[i].u.sval
+symtab[i].u.sval[0]
+```
+
 ## Bit-fields
 
 `-> .` sizeof

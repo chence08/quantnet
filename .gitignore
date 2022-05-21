@@ -4,4 +4,4 @@
 !*.hpp
 !*/
 !*.sh
-!.vscode/*.json
+!.vscode/c_cpp_properties.json

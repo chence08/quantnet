@@ -1,3 +1,12 @@
+**g++ compilation**
+
+```
+-I <dir>                Add directory to the end of the list of include search paths
+-L <dir>                Add directory to library search path
+```
+
+------
+
 # Daniel Liang
 
 ```cpp
@@ -652,6 +661,31 @@ r1 < r2 is false
 A compound type is a type that is defined in terms of another type.
 
 ### 2.3.1 References
+
+# 12. Dynamic Memory
+
+Static memory is used for local `static` objects, for class `static` data members, and for variables defined outside any function.
+
+Stack memory is used for non`static` objects defined inside functions.
+
+Objects allocated in static or stack memory are automatically created and destroyed by the compiler. Stack objects exist only while the block in which they are defined is executing; `static` objects are allocated before they are used, and they are destroyed when the program ends.
+
+In additional to static or stack memory, every program also has a pool of memory that it can use. This memory is referred to as the **free store** or **heap**. Programs use the heap for objects that they **dynamically allocate**--that is, for objects that the program allocates at run time. The program controls the lifetime of dynamic objects our code must explicitly destroy such objects when they are no longer needed.
+
+## 12.1 Dynamic Memory and Smart Pointers
+
+- `new`: allocates, and optionally initializes, an object in dynamic memory and returns a pointer to that object.
+- `delete`: takes a pointer to a dynamic object, destroys that object, and frees the associated memory.
+- If we forget to free the memory, we have a **memory leak**.
+- If we free the memory when there are still pointers referring to that memory, we have a pointer that refers to memory that is no longer valid.
+
+1. `shared_ptr`: allows multiple pointers to refer to the same object
+2. `unique_ptr`: "owns" the object to which it points
+3. `weak_ptr`: weak reference to an object managed by a `shared_ptr`
+
+### 12.1.1 The `shared_ptr` Class
+
+Smart pointers are templates.
 
 # 13 Copy Control
 
