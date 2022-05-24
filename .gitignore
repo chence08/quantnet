@@ -5,5 +5,7 @@
 !*/
 !*.sh
 !.vscode/c_cpp_properties.json
+!*.md
+*.DS_Store
 !/L9/Level9Code/*.vcxproj
 !/L9/Submission/**
