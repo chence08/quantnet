@@ -6,3 +6,5 @@
 !*.sh
 !.vscode/c_cpp_properties.json
 !/L9/Level9Code/**
+!*.md
+*.DS_Store
