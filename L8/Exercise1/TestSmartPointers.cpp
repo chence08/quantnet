@@ -38,8 +38,8 @@ void testSharedPointer()
 {
     cout << "=====Test Shared Pointers=====" << endl;
     ShapeArray arr(3);
-    arr[0] = ShapePtr(new Point());
-    arr[1] = ShapePtr(new Line());
+    arr[0] = ShapePtr(new Point);
+    arr[1] = ShapePtr(new Line);
     arr[2] = ShapePtr(new Circle(Point(), 1));
 
     for (int i = 0; i < 3; i++)
