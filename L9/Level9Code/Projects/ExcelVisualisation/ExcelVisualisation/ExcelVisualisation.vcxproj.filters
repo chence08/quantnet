@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\UtilitiesDJD\ExcelDriver\TestSingleCurve.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\UtilitiesDJD\ExcelDriver\TestTwoCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,6 +34,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\UtilitiesDJD\ExcelDriver\TestVectorExcel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\UtilitiesDJD\ExcelDriver\TestSingleCurve.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
