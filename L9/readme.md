@@ -41,12 +41,12 @@ Finally, we note that $n(x)$ is the normal pdf and $N(x)$ is the cdf, both of wh
 
 We give the set of test values for option pricing.
 
-| Batch | T    | K    | sig  | r    | S    | C        | P       |
+| Batch | sig  | K    | T    | r    | S    | C        | P       |
 | ----- | ---- | ---- | ---- | ---- | ---- | -------- | ------- |
-| 1     | 0.25 | 65   | 0.3  | 0.08 | 60   | 2.13337  | 5.84628 |
-| 2     | 1    | 100  | 0.2  | 0    | 100  | 7.96557  | 7.96557 |
-| 3     | 1    | 10   | 0.5  | 0.12 | 5    | 0.204058 | 4.07326 |
-| 4     | 30   | 100  | 0.3  | 0.08 | 100  | 92.17570 | 1.24750 |
+| 1     | 0.3  | 65   | 0.25 | 0.08 | 60   | 2.13337  | 5.84628 |
+| 2     | 0.2  | 100  | 1    | 0    | 100  | 7.96557  | 7.96557 |
+| 3     | 0.5  | 10   | 1    | 0.12 | 5    | 0.204058 | 4.07326 |
+| 4     | 0.3  | 100  | 30   | 0.08 | 100  | 92.17570 | 1.24750 |
 
 ### Black-Scholes formula
 
@@ -96,21 +96,21 @@ This formula is used when creating trading strategies.
 
 1. Implement the above formulae for gamma for call and put **future option** pricing using the data set
 
-  | K    | S    | T    | r    | b    | sig  | call   | put     |
-  | ---- | ---- | ---- | ---- | ---- | ---- | ------ | ------- |
-  | 100  | 105  | 0.5  | 0.1  | 0    | 0.36 | 0.5946 | -0.3566 |
+| S    | K    | T    | r    | sig  | b    | call   | put     |
+| ---- | ---- | ---- | ---- | ---- | ---- | ------ | ------- |
+| 105  | 100  | 0.5  | 0.1  | 0.36 | 0    | 0.5946 | -0.3566 |
 
 2. We now use the code in part 1 to compute call delta price for a monotonically increasing range of underlying values of $S$, for example $10,11,12,\dots,50$. To this end, the output will be a `vector` and it entails calling the above formula for a call delta for each value $S$ and each computed option price will be stored in a `vector<double>` object. It will be useful to reuse the above global function that produces a mesh array of double separated by a mesh size $h$.
 
 3. Incorporate this into your above **matrix pricer** code, so you can input a matrix of option parameters and receive a matrix of either Delta or Gamma as the result.
 
 4. We now use divided differences to approximate option sensitivities. In some cases, an exact formula may not exist (or is difficult to find) and we resort to numerical methods. In general, we can approximate first and second-order derivatives in $S$ by 3-point second order approximations, for example:
-  $$
+$$
   \begin{align}
   \Delta&=\frac{V(S+h)-V(S-h)}{2h}\\
   \Gamma&=\frac{V(S+h)-2V(S)+V(S-h)}{h^2}
   \end{align}
-  $$
+$$
   In this case the parameter $h$ is 'small' in some sense. By **Taylor's expansion** you can show that the above approximations are second order accurate in $h$ to the corresponding derivatives.
 
   > The objective of this part is to perform the same calculations as in part 1 and 2, but now using divided differences. Compare the accuracy with various values of the parameter $h$ (In general, smaller values of $h$ produce better approximations but we need to avoid **round-offer errors** and subtraction of quantities that are very close to each other). Incorporate this into your well-designed class structure.
