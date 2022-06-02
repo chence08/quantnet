@@ -20,10 +20,8 @@ template<typename T>
 int Array<T>::DEFAULT_SIZE = 10;
 
 template<typename T>
-Array<T>::Array()
+Array<T>::Array() : m_size(DEFAULT_SIZE), m_data(new T[m_size])
 {
-    m_size = DEFAULT_SIZE;
-    m_data = new T[m_size];
 }
 
 template<typename T>

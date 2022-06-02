@@ -131,9 +131,9 @@ In general, the perpetual price is the time-homogeneous price and is the same as
 
 2. Test the data with
 
-	| K    | sig  | r    | b    | S    | C       | P       |
+	| S    | K    | sig  | r    | b    | C       | P       |
 	| ---- | ---- | ---- | ---- | ---- | ------- | ------- |
-	| 100  | 0.1  | 0.1  | 0.02 | 110  | 18.5035 | 3.03106 |
+	| 110  | 100  | 0.1  | 0.1  | 0.02 | 18.5035 | 3.03106 |
 
 3. We now use the code in part 1 to compute call and put option price for a monotonically increasing range of underlying values of $S$, for example $10,11,12,\dots,50$. To this end, the output will be a vector and this exercise entails calling the option pricing formulae in part 1 for each value $S$ and each computed option price will be stored in a vector object.
 
