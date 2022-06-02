@@ -105,12 +105,14 @@ This formula is used when creating trading strategies.
 3. Incorporate this into your above **matrix pricer** code, so you can input a matrix of option parameters and receive a matrix of either Delta or Gamma as the result.
 
 4. We now use divided differences to approximate option sensitivities. In some cases, an exact formula may not exist (or is difficult to find) and we resort to numerical methods. In general, we can approximate first and second-order derivatives in $S$ by 3-point second order approximations, for example:
+
 $$
   \begin{align}
   \Delta&=\frac{V(S+h)-V(S-h)}{2h}\\
   \Gamma&=\frac{V(S+h)-2V(S)+V(S-h)}{h^2}
   \end{align}
 $$
+
   In this case the parameter $h$ is 'small' in some sense. By **Taylor's expansion** you can show that the above approximations are second order accurate in $h$ to the corresponding derivatives.
 
   > The objective of this part is to perform the same calculations as in part 1 and 2, but now using divided differences. Compare the accuracy with various values of the parameter $h$ (In general, smaller values of $h$ produce better approximations but we need to avoid **round-offer errors** and subtraction of quantities that are very close to each other). Incorporate this into your well-designed class structure.
